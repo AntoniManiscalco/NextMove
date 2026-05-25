@@ -1,0 +1,165 @@
+###############################################################################
+# Tempo - .gitattributes
+# Cross-platform .NET repository configuration
+#
+# Goals:
+# - Normalize line endings across Windows/macOS/Linux
+# - Improve Git diffs for common project files
+# - Prevent binary merge corruption
+# - Ensure consistent repository behavior
+###############################################################################
+
+###############################################################################
+# Default behavior
+###############################################################################
+
+# Automatically normalize text files
+* text=auto
+
+###############################################################################
+# Line endings
+###############################################################################
+
+# Source code
+*.cs            text diff=csharp
+*.csx           text diff=csharp
+*.vb            text
+*.fs            text
+*.fsx           text
+
+# Web / frontend
+*.js            text
+*.ts            text
+*.tsx           text
+*.jsx           text
+*.css           text
+*.scss          text
+*.sass          text
+*.html          text
+*.htm           text
+*.razor         text
+*.xaml          text
+*.xml           text
+*.json          text
+*.yml           text
+*.yaml          text
+
+# Shell / scripts
+*.ps1           text eol=crlf
+*.bat           text eol=crlf
+*.cmd           text eol=crlf
+*.sh            text eol=lf
+
+# Config / docs
+*.md            text
+*.txt           text
+*.editorconfig  text
+*.gitignore     text
+*.gitattributes text
+*.props         text
+*.targets       text
+*.config        text
+*.sln           text eol=crlf
+*.csproj        text
+*.fsproj        text
+*.vbproj        text
+*.sql           text
+*.dockerfile    text
+Dockerfile      text
+
+###############################################################################
+# Images
+###############################################################################
+
+*.png           binary
+*.jpg           binary
+*.jpeg          binary
+*.gif           binary
+*.bmp           binary
+*.ico           binary
+*.webp          binary
+*.svg           text
+
+###############################################################################
+# Fonts
+###############################################################################
+
+*.ttf           binary
+*.otf           binary
+*.woff          binary
+*.woff2         binary
+
+###############################################################################
+# Archives / packages
+###############################################################################
+
+*.zip           binary
+*.7z            binary
+*.rar           binary
+*.tar           binary
+*.gz            binary
+*.nupkg         binary
+
+###############################################################################
+# Audio / video
+###############################################################################
+
+*.mp3           binary
+*.wav           binary
+*.mp4           binary
+*.mov           binary
+
+###############################################################################
+# Certificates / signing
+###############################################################################
+
+*.pfx           binary
+*.snk           binary
+*.cer           binary
+*.crt           binary
+*.pem           text
+
+###############################################################################
+# Database / storage
+###############################################################################
+
+*.db            binary
+*.sqlite        binary
+*.sqlite3       binary
+*.mdf           binary
+*.ldf           binary
+
+###############################################################################
+# Office documents
+###############################################################################
+
+*.docx          binary
+*.xlsx          binary
+*.pptx          binary
+*.pdf           binary
+
+###############################################################################
+# Git diff settings
+###############################################################################
+
+# Better diff support for C#
+*.cs diff=csharp
+
+###############################################################################
+# Merge strategy
+###############################################################################
+
+# Avoid merge conflicts on generated files
+*.Designer.cs   merge=ours
+*.generated.cs  merge=ours
+
+###############################################################################
+# Linguist settings (GitHub)
+###############################################################################
+
+# Prevent vendored/generated files from affecting language stats
+*.generated.cs linguist-generated=true
+
+###############################################################################
+# End of file
+###############################################################################
